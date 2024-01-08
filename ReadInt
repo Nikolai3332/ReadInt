@@ -1,0 +1,32 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine(ConvertNumber());
+        Console.ReadKey();
+    }
+
+    private static int ConvertNumber()
+    {
+        bool cycle = false;
+        int number = 0;
+
+        while (cycle == false)
+        {
+            Console.Write("Введите число: ");
+            string userInput = Console.ReadLine();
+
+            if (int.TryParse(userInput, out number) == true)
+            {
+                Console.WriteLine($"Преобразование прошло успешно! Число: {number}");
+                cycle = true;
+            }
+            else
+            {
+                Console.WriteLine("Преобразование не успешно! Попробуйте еще раз.");
+            }
+        }
+
+        return number;
+    }
+}
